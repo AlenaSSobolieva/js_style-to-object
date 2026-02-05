@@ -14,6 +14,10 @@ function convertToObject(sourceString) {
     .reduce((acc, rule) => {
       const [property, value] = rule.split(':');
 
+      if (!value) {
+        return acc;
+      }
+
       acc[property.trim()] = value.trim();
 
       return acc;
